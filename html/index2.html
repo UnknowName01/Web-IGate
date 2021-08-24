@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/js/index.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Brand-Logo</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="">
+                    <a href="#">Device Info</a>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Network Settings</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">WAN</a>
+                        </li>
+                        <li>
+                            <a href="#">LAN</a>
+                        </li>
+                        <li>
+                            <a href="#wirelessSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Wireless</a>
+                            <ul class="list-unstyled collapse" id="wirelessSubmenu">
+                                <li>
+                                    <a href="#">Basic</a>
+                                </li>
+                                <li>
+                                    <a href="#">Security</a>
+                                </li>
+                                <li>
+                                    <a href="#">MAC Filter</a>
+                                </li>
+                                <li>
+                                    <a href="#">Advanced</a>
+                                </li>
+                                <li>
+                                    <a href="#">Station Info</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Advanced Features</a>
+                </li>
+                <li>
+                    <a href="#">Diagnotics</a>
+                </li>
+                <li>
+                    <a href="#">Management</a>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+
+            <nav >
+                <div >
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="openClose()">
+                        <i class="fas fa-align-left"></i>
+                        <span>☰</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script>
+        $(function(){
+          $('#sidebarCollapse').click(function(){
+            $('#sidebar').toggleClass('active');
+          })
+        });
+    </script>
+</body>
+</html>
