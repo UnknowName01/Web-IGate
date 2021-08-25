@@ -38,6 +38,9 @@ a:focus {
     width: 100%;
     background-color: #321bff;
     border: none;
+    margin-bottom: 0.5%;
+    top: 0%;
+    z-index: 1;
 }
 
 .button {
@@ -54,24 +57,26 @@ a:focus {
 }
 
 .wrapper {
-    position: absolute;
     display: flex;
     width: 100%;
     align-items: stretch;
-    min-height: 100%;
+    height: 100%
 }
 
-
-
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    position: absolute;
+    top: 0%;
+    min-width: 300px;
+    max-width: 300px;
     background: #ffffff;
     color: #fff;
     transition: all 0.3s;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 20%), 0 3px 3px -2px rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+    overflow-y:auto;
+    height: 100%;
 }
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -300px;
 }
 #sidebar .sidebar-header {
     padding: 20px;
@@ -80,6 +85,7 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
+    padding-top: 65px;
 }
 
 #sidebar ul p {
@@ -162,6 +168,9 @@ a.article:hover {
     CONTENT STYLE
 ----------------------------------------------------- */
 
+#sidebarCollapse {
+    color: white;
+}
 #content {
     width: 100%;
     padding: 20px;
@@ -171,7 +180,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -300px;
     }
     #sidebar.active {
         margin-left: 0;
