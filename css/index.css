@@ -30,6 +30,29 @@ a:focus {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
+.head {
+    height: 60px;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 20%), 0 3px 3px -2px rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+    position: relative;
+    display: flex;
+    width: 100%;
+    background-color: #321bff;
+    border: none;
+}
+
+.button {
+    width: 60px;
+    margin-top: 14px;
+    margin-left: 2%;
+    background: #321bff;
+    border: none;
+    color: #fff;
+    text-decoration: solid;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+
 .wrapper {
     position: absolute;
     display: flex;
@@ -38,10 +61,12 @@ a:focus {
     min-height: 100%;
 }
 
+
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: #ffffff;
     color: #fff;
     transition: all 0.3s;
 }
@@ -50,7 +75,7 @@ a:focus {
 }
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #ffffff;
 }
 
 #sidebar ul.components {
@@ -65,19 +90,19 @@ a:focus {
     padding: 10px;
     font-size: 1.1em;
     display: block;
-    color: #fff;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #000000;
+    background: rgb(207, 207, 207);
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    color: rgb(0, 0, 0);
+    background: #ffffff;
 }
 
 a[data-toggle="collapse"] {
@@ -95,20 +120,20 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
-    color: #fff;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
 }
 ul ul ul a {
     font-size: 0.9em !important;
     padding-left: 60px !important;
-    background: #6d7fcc;
-    color: #fff;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
 }
 ul ul ul ul a {
     font-size: 0.9em !important;
     padding-left: 90px !important;
-    background: #6d7fcc;
-    color: #fff;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
 }
 ul.CTAs {
     padding: 20px;
@@ -155,3 +180,4 @@ a.article:hover {
         display: none;
     }
 }
+
