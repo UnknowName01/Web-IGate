@@ -30,7 +30,6 @@ a:focus {
 }
 
 
-
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -60,12 +59,20 @@ a:focus {
     cursor: pointer;
     
 }
-
+.button-1 {
+    border: none;
+    border-radius: 0;
+}
+.button-1:focus {
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
 .wrapper {
     display: flex;
     width: 100%;
     align-items: stretch;
-    height: 100%
+    height: 100%;
 }
 
 #sidebar {
