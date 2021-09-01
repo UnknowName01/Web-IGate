@@ -4,82 +4,207 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar</title>
+    
+    <!-- Import material UI -->
+    <link rel="stylesheet" href="/css/index2.css">
+    <link rel="stylesheet" href="/css/material-components-web.min.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <script src="/js/material-components-web.min.js"></script>
+    <title>Document</title>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/js/index.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-    <div class="wrapper">
+    <header class=" mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            <button class="mdc-ripple-surface mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded" style="border-radius: 50%;" id="sidebarCollapse" onclick="closesidebar()">menu</button>
+            <span class="mdc-top-app-bar__title">IGate GPON ONT</span> 
+        </section>
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            <button class="mdc-ripple-surface mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded" style="border-radius: 50%;">power_settings_new</button>
+          </section>
+        </div>
+    </header>
+    <!-- <div role="progressbar" class="mdc-linear-progress" aria-label="Example Progress Bar" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0">
+        <div class="mdc-linear-progress__buffer">
+          <div class="mdc-linear-progress__buffer-bar"></div>
+          <div class="mdc-linear-progress__buffer-dots"></div>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div> -->
+      <div class="wrapper">
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Brand-Logo</h3>
-            </div>
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
-                <li class="">
-                    <a href="#">Device Info</a>
+                <li><a data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" href="#info">Thông tin</a>
+                    <ul class="collapse list-unstyled" id="info">
+                        <li>
+                            <a href="#">Tổng quan chung</a>
+                        </li>
+                        <li>
+                            <a href="#">Thiết bị kết nối</a>
+                        </li>
+                        <li>
+                            <a href="#">Thống kê dữ liệu</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Network Settings</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li><a href="#">Thiết lập đơn giản</a></li>
+                <li><a href="#networkSetting" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thiết lập mạng</a>
+                    <ul class="collapse list-unstyled" id="networkSetting" >
                         <li>
                             <a href="#">WAN</a>
                         </li>
                         <li>
-                            <a href="#">LAN</a>
+                            <a href="#LAN-basic" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">LAN</a>
+                            <ul class="collapse list-unstyled" id="LAN-basic">
+                                <li>
+                                    <a href="#">DHCPD</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gán IP LAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">VLAN</a>
+                                </li>
+                                <li>
+                                    <a href="#">Giám sát băng thông</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="#wirelessSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Wireless</a>
-                            <ul class="list-unstyled collapse" id="wirelessSubmenu">
+                            <a href="#wifi" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">WiFi</a>
+                            <ul class="collapse list-unstyled" id="wifi">
                                 <li>
-                                    <a href="#">Basic</a>
+                                    <a href="#">Tổng quan</a>
                                 </li>
                                 <li>
-                                    <a href="#">Security</a>
+                                    <a href="#">Chặn MAC</a>
                                 </li>
                                 <li>
-                                    <a href="#">MAC Filter</a>
+                                    <a href="#">Cài đặt tín hiệu</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#advanced" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Thiết lập nâng cao</a>
+                    <ul class="collapse list-unstyled" id="advanced">
+                        <li>
+                            <a href="#WANplus" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">WAN</a>
+                            <ul class="collapse list-unstyled" id="WANplus">
+                                <li>
+                                    <a href="#">NAT</a>
                                 </li>
                                 <li>
-                                    <a href="#">Advanced</a>
+                                    <a href="#">DMZ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Station Info</a>
+                                    <a href="#">DDNS</a>
+                                </li>
+                                <li>
+                                    <a href="#">UPnP</a>
+                                </li>
+                                <li>
+                                    <a href="#VPNplus" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">VPN</a>
+                                    <ul class="collapse list-unstyled" id="VPNplus">
+                                        <li>
+                                            <a href="#">IPSec</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">LT2P</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">OpenVPN</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#LANplus" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">LAN</a>
+                            <ul class="collapse list-unstyled" id="LANplus">
+                                <li>
+                                    <a href="#">Kiểm soát phụ huynh</a>
+                                </li>
+                                <li>
+                                    <a href="#">Chặn URL</a>
+                                </li>
+                                <li>
+                                    <a href="#">QoS</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#USB" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Giao tiếp USB</a>
+                            <ul class="collapse list-unstyled" id="USB">
+                                <li>
+                                    <a href="#">Thông tin</a>
+                                </li>
+                                <li>
+                                    <a href="#">Máy in qua USB</a>
+                                </li>
+                                <li>
+                                    <a href="#">DLNA</a>
+                                </li>
+                                <li>
+                                    <a href="#">SMB</a>
+                                </li>
+                                <li>
+                                    <a href="#">FTP</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Advanced Features</a>
-                </li>
-                <li>
-                    <a href="#">Diagnotics</a>
-                </li>
-                <li>
-                    <a href="#">Management</a>
-                </li>
-                <li>
-                    <a href="#">Logout</a>
+                    <a href="#system" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý hệ thống</a>
+                    <ul class="collapse list-unstyled" id="system">
+                        <li>
+                            <a href="#config" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Cấu hình</a>
+                            <ul class="collapse list-unstyled" id="config">
+                                <li>
+                                    <a href="#">Khôi phục</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sao lưu</a>
+                                </li>
+                                <li>
+                                    <a href="#">Khôi phục cài đặt gốc</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Nhật ký hệ thống</a>
+                        </li>
+                        <li>
+                            <a href="#">Cập nhật thời gian</a>
+                        </li>
+                        <li>
+                            <a href="#">Cập nhật phần mềm</a>
+                        </li>
+                        <li>
+                            <a href="#">Đổi mật khẩu</a>
+                        </li>
+                        <li>
+                            <a href="#">Truy cập vào hệ thống (dev)</a>
+                        </li>
+                        <li>
+                            <a href="#">Khởi động lại</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
-        <div id="content">
-
-            <nav >
-                <div >
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="openClose()">
-                        <i class="fas fa-align-left"></i>
-                        <span>☰</span>
-                    </button>
-                </div>
-            </nav>
-        </div>
     </div>
     <script>
         $(function(){
@@ -90,6 +215,3 @@
     </script>
 </body>
 </html>
-
-
-<!-- test commit -->
